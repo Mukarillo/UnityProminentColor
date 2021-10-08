@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using com.mukarillo.prominentcolor;
 using UnityEngine;
 
-public class Test : MonoBehaviour {
+public class SampleColorGrid : MonoBehaviour {
     public List<string> urls = new List<string>(); 
     public Transform elemenTransformParent;
     public GameObject elementPrefab;
@@ -30,11 +31,15 @@ public class Test : MonoBehaviour {
             yield return www;
             www.LoadImageIntoTexture(mTexture);
             if (mTexture == null || (mTexture.width == 8 && mTexture.height == 8)) continue;
-
-            //if (mTexture.GetPixel(0, 0).a > 0.99f)
-            //    mTexture = ProminentColor.RemoveBorder(mTexture, Color.white, 20);
-            
-            Instantiate(elementPrefab, elemenTransformParent).GetComponent<Element>().SetupElement(mTexture, ProminentColor.GetColors32FromImage(mTexture, maxColors, colorLimiterPercentage, uniteColorsTolerance, minimiumColorPercentage));
+ 
+            Instantiate(elementPrefab, elemenTransformParent)
+                .GetComponent<Element>()
+                .SetupElement(mTexture, 
+                    ProminentColor.GetColors32FromImage(mTexture,
+                        maxColors,
+                        colorLimiterPercentage,
+                        uniteColorsTolerance,
+                        minimiumColorPercentage));
         }
     }
 }

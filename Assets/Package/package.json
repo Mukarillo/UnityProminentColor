@@ -1,0 +1,24 @@
+{
+  "name": "com.mukarillo.prominentcolor",
+  "version": "1.0.0",
+  "displayName": "Unity Prominent Color",
+  "description": "Tool to gather main colors of an image using Unity",
+  "unity": "2019.2",
+  "license": "",
+  "dependencies": {
+  },
+  "keywords": [
+    "Scroll"
+  ],
+  "samples": [
+    {
+      "displayName": "Sample Color Grid",
+      "description": "Showcase of how to use Prominent Color",
+      "path": "Samples~/SampleColorGrid"
+    }
+  ],
+  "author": {
+    "name": "Mukarillo",
+    "url": "https://github.com/Mukarillo"
+  }
+}
